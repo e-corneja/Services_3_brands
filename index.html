@@ -39,28 +39,28 @@
         </div>
         <ul class="burger__list list-reset">
           <li class="burger__item list-reset burger__item--active">
-            <a href="#">Ремонт техники</a>
+            <a href="#" class="burger__link">Ремонт техники</a>
           </li>
           <li class="burger__item list-reset">
-            <a href="#">Услуги и сервисы</a>
+            <a href="#" class="burger__link">Услуги и сервисы</a>
           </li>
           <li class="burger__item list-reset">
-            <a href="#">Корпоративным клиентам</a>
+            <a href="#" class="burger__link">Корпоративным клиентам</a>
           </li>
           <li class="burger__item list-reset">
-            <a href="#">Продавцам техники</a>
+            <a href="#" class="burger__link">Продавцам техники</a>
           </li>
           <li class="burger__item list-reset">
-            <a href="#">Партнерам</a>
+            <a href="#" class="burger__link">Партнерам</a>
           </li>
           <li class="burger__item list-reset">
-            <a href="#">Производителям</a>
+            <a href="#" class="burger__link">Производителям</a>
           </li>
           <li class="burger__item list-reset">
-            <a href="#">Наши сервисные центры</a>
+            <a href="#" class="burger__link">Наши сервисные центры</a>
           </li>
           <li class="burger__item list-reset">
-            <a href="#">Контакты</a>
+            <a href="#" class="burger__link">Контакты</a>
           </li>
         </ul>
         <div class="burger-group__btn">
@@ -81,12 +81,14 @@
           </button>
         </div>
         <address class="contacts">
-          <a href="mailto:mail@cps.com">mail@cps.com</a>
-          <a href="tel:+78008908900">8&nbsp;800&nbsp;890 8900</a>
+          <a href="mailto:mail@cps.com" class="contacts__link">mail@cps.com</a>
+          <a href="tel:+78008908900" class="contacts__link"
+            >8&nbsp;800&nbsp;890 8900</a
+          >
         </address>
         <div class="lang">
-          <a href="#" class="lang__link--active">RU</a><a href="#">EN</a
-          ><a href="#">CH</a>
+          <a href="#" class="lang__link lang__link--active">RU</a
+          ><a href="#">EN</a><a href="#" class="lang__link">CH</a>
         </div>
       </div>
     </div>
@@ -152,15 +154,21 @@
         <nav class="nav">
           <ul class="nav__list list-reset">
             <li class="nav__item nav__item--active">
-              <a href="#">Ремонтируемые устройства</a>
+              <a class="nav__link" href="#">Ремонтируемые устройства</a>
             </li>
             <li class="nav__item">
-              <a href="#">Дополнительные услуги</a>
+              <a href="#" class="nav__link">Дополнительные услуги</a>
             </li>
-            <li class="nav__item"><a href="#">Цены на&nbsp;услуги</a></li>
-            <li class="nav__item"><a href="#">Специальные цены</a></li>
-            <li class="nav__item"><a href="#">Адреса сервисных центров</a></li>
-            <li class="nav__item"><a href="#">Отзывы</a></li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">Цены на&nbsp;услуги</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">Специальные цены</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">Адреса сервисных центров</a>
+            </li>
+            <li class="nav__item"><a href="#" class="nav__link">Отзывы</a></li>
           </ul>
         </nav>
         <div class="fade"></div>
@@ -173,23 +181,36 @@
             </p>
             <p class="text-content--middle">
               Мы&nbsp;успешно работаем с&nbsp;1992 года&nbsp;и заслужили
-              репутацию надежного партнера
+              репутацию надежного партнера<span class="text-content--bottom"
+                >, что подтверждает большое количество постоянных клиентов.
+                Мы&nbsp;гордимся тем, что к&nbsp;нам обращаются
+                по&nbsp;рекомендациям&nbsp;и, в&nbsp;свою очередь, советуют нас
+                родным и&nbsp;близким.</span
+              >
             </p>
-            <p class="text-content--bottom">
-              Мы&nbsp;успешно работаем с&nbsp;1992 года и&nbsp;заслужили
-              репутацию надежного партнера, что подтверждает большое количество
-              постоянных клиентов. Мы&nbsp;гордимся тем, что к&nbsp;нам
-              обращаются по&nbsp;рекомендациям&nbsp;и, в&nbsp;свою очередь,
-              советуют нас родным и&nbsp;близким.
-            </p>
-            <button class="services__btn btn-reset">
+            <button class="expand__btn btn-reset">
               <svg class="icon icon-expand" width="24" height="24">
                 <use xlink:href="#expand"></use>
               </svg>
-              <p>Читать далее</p>
+              Читать далее
             </button>
           </div>
-          <div class="services__img"></div>
+          <div class="services__img">
+            <picture>
+              <source
+                media="(min-width: 768px)"
+                srcset="img/img-services-lg.jpg"
+              />
+              <source
+                media="(min-width: 480px)"
+                srcset="img/img-services-md.jpg"
+              />
+              <img
+                src="img/img-services-sm.jpg"
+                alt="Вывеска сервисного центра"
+              />
+            </picture>
+          </div>
         </div>
       </section>
 
@@ -197,8 +218,8 @@
       <section class="brands">
         <h3 class="brands__title">Ремонт техники различных брендов</h3>
         <div class="swiper brands__swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide">
               <div class="slider-card">
                 <img src="img/Lenovo.svg" alt="Логотип Леново" />
                 <a href="#">
@@ -207,8 +228,8 @@
                   </svg>
                 </a>
               </div>
-            </div>
-            <div class="swiper-slide">
+            </li>
+            <li class="swiper-slide">
               <div class="slider-card">
                 <img src="img/Sumsung.png" alt="Логотип Самсунг" />
                 <a href="#">
@@ -217,8 +238,8 @@
                   </svg>
                 </a>
               </div>
-            </div>
-            <div class="swiper-slide">
+            </li>
+            <li class="swiper-slide">
               <div class="slider-card">
                 <img src="img/Apple.jpg" alt="Логотип Яблоко" />
                 <a href="#">
@@ -227,8 +248,8 @@
                   </svg>
                 </a>
               </div>
-            </div>
-            <div class="swiper-slide">
+            </li>
+            <li class="swiper-slide">
               <div class="slider-card">
                 <img src="img/Bosh.svg" alt="Логотип Bosh" />
                 <a href="#">
@@ -237,8 +258,8 @@
                   </svg>
                 </a>
               </div>
-            </div>
-            <div class="swiper-slide">
+            </li>
+            <li class="swiper-slide">
               <div class="slider-card">
                 <img src="img/Hp.svg" alt="Логотип Hp" />
                 <a href="#">
@@ -247,8 +268,8 @@
                   </svg>
                 </a>
               </div>
-            </div>
-            <div class="swiper-slide">
+            </li>
+            <li class="swiper-slide">
               <div class="slider-card">
                 <img src="img/Acer.svg" alt="Логотип Acer" />
                 <a href="#">
@@ -257,8 +278,8 @@
                   </svg>
                 </a>
               </div>
-            </div>
-            <div class="swiper-slide">
+            </li>
+            <li class="swiper-slide">
               <div class="slider-card">
                 <img src="img/Sonic.svg" alt="Логотип Sonic" />
                 <a href="#">
@@ -267,8 +288,8 @@
                   </svg>
                 </a>
               </div>
-            </div>
-            <div class="swiper-slide">
+            </li>
+            <li class="swiper-slide">
               <div class="slider-card">
                 <img src="img/Sony.png" alt="Логотип Sony" />
                 <a href="#">
@@ -277,8 +298,8 @@
                   </svg>
                 </a>
               </div>
-            </div>
-            <div class="swiper-slide">
+            </li>
+            <li class="swiper-slide">
               <div class="slider-card">
                 <img src="img/Bosh.svg" alt="Логотип Bosh" />
                 <a href="#">
@@ -287,8 +308,8 @@
                   </svg>
                 </a>
               </div>
-            </div>
-            <div class="swiper-slide">
+            </li>
+            <li class="swiper-slide">
               <div class="slider-card">
                 <img src="img/Hp.svg" alt="Логотип Hp" />
                 <a href="#">
@@ -297,8 +318,8 @@
                   </svg>
                 </a>
               </div>
-            </div>
-            <div class="swiper-slide">
+            </li>
+            <li class="swiper-slide">
               <div class="slider-card">
                 <img src="img/Acer.svg" alt="Логотип Acer" />
                 <a href="#">
@@ -307,14 +328,15 @@
                   </svg>
                 </a>
               </div>
-            </div>
-          </div>
+            </li>
+          </ul>
           <div class="swiper-bullet-pagination swiper__pagination size"></div>
         </div>
-        <button class="brands__btn btn-reset brands__btn--show">
-          <svg class="icon icon-expand" width="24" height="24">
+        <button class="brands__btn btn-reset">
+          <svg class="icon brands__icon-expand" width="24" height="24">
             <use xlink:href="#expand"></use>
           </svg>
+          <span class="btn-text">Показать все</span>
         </button>
       </section>
     </main>
