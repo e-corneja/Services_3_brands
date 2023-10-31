@@ -48,43 +48,24 @@ if (typeof window !== "undefined") {
       },
     });
   });
-  ////////////////////  SHOW MORE BTN ////////////////////////
-
-  const showBtn = document.querySelector(".brands__btn");
-  const container = document.querySelector(".swiper-wrapper");
-  const list = document.querySelectorAll(".swiper-slide");
-  const element = document.querySelector(".swiper-slide");
-  const icon = showBtn.querySelector(".icon-expand");
-
-  let elemInTwoRows = calculateVisibleElementsInRow() * 2;
-
-  function calculateVisibleElementsInRow() {
-    const containerWidth = container.clientWidth;
-    const elementWidth = element.clientWidth;
-    const columnGap = parseInt(window.getComputedStyle(container).columnGap);
-
-    let elementsInRow = Math.floor(
-      (containerWidth + columnGap) / (elementWidth + columnGap)
-    );
-
-    return elementsInRow;
-  }
-
-  for (let i = list.length - elemInTwoRows; i > 0; i--) {
-    list[i].classList.add("hide");
-    console.log(list[i]);
-  }
-
-  showBtn.addEventListener("click", function () {
-    for (let i = list.length - elemInTwoRows; i > 0; i--) {
-      list[i].classList.toggle("hide");
-      showBtn.classList.toggle("brands__btn--hide");
-    }
-    if (showBtn.classList.contains("brands__btn--hide")) {
-      icon.style.transform = "rotate(180deg)";
-    }
-    if (!showBtn.classList.contains("brands__btn--hide")) {
-      icon.style.transform = "rotate(0deg)";
-    }
-  });
 }
+////////////////////  SHOW MORE BTN ////////////////////////
+
+const showBtn = document.querySelector(".brands__btn");
+const container = document.querySelector(".swiper-wrapper");
+const icon = showBtn.querySelector(".brands__icon-expand");
+const btnText = document.querySelector(".btn-text");
+
+showBtn.addEventListener("click", function () {
+  container.classList.toggle("swiper-wrapper--opened");
+  icon.style.transform = "rotate(180deg)";
+
+  if (container.classList.contains("swiper-wrapper--opened")) {
+    icon.style.transform = "rotate(180deg)";
+    btnText.textContent = "Скрыть";
+  }
+  if (!container.classList.contains("swiper-wrapper--opened")) {
+    icon.style.transform = "rotate(0deg)";
+    btnText.textContent = "Показать все";
+  }
+});
