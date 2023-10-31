@@ -13,10 +13,7 @@
   }
 
   .services__img {
-    background-image: url("../img/img-services-md.jpg");
-    background-position: center;
-    background-size: cover;
-    min-height: 300px;
+    align-self: center;
   }
 
   .slider-card {
@@ -85,10 +82,6 @@
   }
 
   .services__img {
-    background-image: url("../img/img-services-lg.jpg");
-    background-position: top left;
-    background-size: contain;
-    min-width: 360px;
     flex-grow: 1;
     border-radius: 5px;
   }
@@ -108,6 +101,7 @@
   .swiper.brands__swiper {
     padding: 9px 24px 16px 24px;
   }
+
   .swiper-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -115,21 +109,15 @@
     row-gap: 16px;
     column-gap: 24px;
     margin-left: 0;
+    max-height: 144px;
   }
 
   .swiper-slide {
     max-width: 224px;
   }
 
-  .swiper-slide.hide {
-    display: none;
-  }
-
-  .brands__btn--show::after {
-    content: "Показать все";
-  }
-  .brands__btn--hide::after {
-    content: "Скрыть";
+  .swiper-wrapper--opened {
+    max-height: 100%;
   }
 
   .brands__btn {
@@ -137,8 +125,17 @@
     align-items: center;
     padding: 0;
     gap: 9px;
-    margin-left: 24px;
+    margin-left: 20px;
     align-self: flex-start;
+    position: relative;
+  }
+
+  .brands__btn:focus-visible {
+    outline: 2px solid #41f6d7;
+    outline-offset: 3px;
+  }
+
+  .btn-text {
     color: #1b1c21;
     font-size: 16px;
     font-weight: 500;
@@ -147,26 +144,21 @@
     transition: color 0.3s ease-in;
   }
 
-  .brands__btn:focus-visible {
-    outline: 2px solid #41f6d7;
-    outline-offset: 3px;
-  }
-
-  .brands__btn:hover {
+  .btn-text:hover {
     color: #41f6d7;
   }
 
-  .brands__btn:active {
+  .btn-text:active {
     color: #5ad3bf;
   }
 }
 
 @media (min-width: 990px) {
   .text-content--middle {
-    display: none;
+    display: block;
   }
   .text-content--bottom {
-    display: block;
+    display: inline;
     margin-bottom: 14px;
   }
 }
@@ -183,6 +175,7 @@
     gap: 31px;
     z-index: 100;
   }
+
   .action {
     color: #1b1c21;
     font-weight: 500;
@@ -234,11 +227,11 @@
   }
 
   .text-content--middle {
-    display: none;
+    display: block;
   }
 
   .text-content--bottom {
-    display: block;
+    display: inline;
     margin-bottom: 14px;
   }
 
